@@ -140,7 +140,7 @@ function showImage(value) {
     return new Promise( (resolve, reject) => {
         let img = document.createElement('img')
         resolve ( img )
-        reject ('błąd');
+        reject ('błąd')
         img.src = value
     }   
     )
@@ -148,9 +148,12 @@ function showImage(value) {
 
 btn.addEventListener('click', () => { 
     showImage(input.value)
-    .then((response => {response.append(imgContainer)}))
+    .then((response) => {imgContainer.append(response)})
     .catch((response) => {response.append(imgContainer)})
 })
+
+//photo to test
+//https://images.photowall.com/products/58341.jpg?h=699&q=85
 
 
 
