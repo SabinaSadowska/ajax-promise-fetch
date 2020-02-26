@@ -101,7 +101,7 @@ btn.addEventListener('click', addAll);
 
  */
 
-let btn = document.getElementById('button');
+/* let btn = document.getElementById('button');
 let input = document.getElementById('input');
 let scorec = document.getElementById('score');
 
@@ -116,13 +116,6 @@ const calc = function(value) {
     })
 }
 
-// function showResults(value) {
-//     const body = document.querySelector("body");
-//     const p = document.createElement("p");
-//     body.append(p);
-// }
-
-
 
 btn.addEventListener('click', () => {
     calc(Number(input.value))
@@ -133,4 +126,31 @@ btn.addEventListener('click', () => {
         scorec.innerText = score;
 
     });
+}) */
+
+//////praca domowa
+
+
+let btn = document.getElementById('button');
+let input = document.getElementById('input');
+let imgContainer = document.getElementById('score');
+
+
+function showImage(value) {
+    return new Promise( (resolve, reject) => {
+        let img = document.createElement('img')
+        resolve ( img )
+        reject ('błąd');
+        img.src = value
+    }   
+    )
+}
+
+btn.addEventListener('click', () => { 
+    showImage(input.value)
+    .then((response => {response.append(imgContainer)}))
+    .catch((response) => {response.append(imgContainer)})
 })
+
+
+
